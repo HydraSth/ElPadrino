@@ -7,7 +7,7 @@ ArbolFamiliar Tattaglia= new ArbolFamiliar("Tattaglia",new List<Humano>());
 ArbolFamiliar Haggen= new ArbolFamiliar("Haggen",new List<Humano>());
 
 Don Vito = new Don("Vito", Corleone);
-
+Subjefe Michael = new Subjefe("Michael", Corleone);
 
 Don Marco = new Don("Marco",Haggen);
 Subjefe Rafa = new Subjefe("Rafa",Haggen);
@@ -19,14 +19,6 @@ Soldado Lolo = new Soldado("Lolo",Tattaglia);
 Subjefe Mauro = new Subjefe("Mauro",Tattaglia);
 Soldado Tom = new Soldado("Tom",Tattaglia);
 
-Subjefe Michael = new Subjefe("Michael",Corleone);
-Subjefe Michael1 = new Subjefe("Michael",Corleone);
-Subjefe Michael2 = new Subjefe("Michael",Corleone);
-Subjefe Michael3 = new Subjefe("Michael",Corleone);
-Subjefe Michael4 = new Subjefe("Michael",Corleone);
-Subjefe Michael5 = new Subjefe("Michael",Corleone);
 
-Lolo.VerArmas();
-Michael.AtaqueSorpresa(Clemenza);
-Tattaglia.Luto();
+
 

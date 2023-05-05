@@ -24,7 +24,7 @@ namespace Armas
             public int CantidadBalas{
                 get {return balas;}
             }
-            private int balas = 6;
+            public int balas = 6;
 
             public void Atacar(Humano mafioso)
             {
@@ -54,6 +54,37 @@ namespace Armas
             }
         }
     
+    public class RevolverOxidado:Revolver{
+        public RevolverOxidado(){
+            this.nombre="Revolver oxidado";
+            SetCondiciones(true);
+        }
+
+        public new void Atacar(Humano mafioso){
+            if (balas > 0){
+                System.Console.WriteLine($"Pow! {mafioso.nombre} fue atacado!");
+                this.balas--;
+                mafioso.vida-= HizoDaño(true);
+            }else{
+                System.Console.WriteLine("Se atasco!");
+                SetCondiciones(false);
+                mafioso.vida-= HizoDaño(false);
+            }
+        }
+        public new int HizoDaño(bool Ataco){
+            Random random = new Random();
+            if(Ataco){
+                int randomNumber = random.Next(0,3);
+                if(randomNumber==1){
+                    return 1;
+                }else{
+                    return 4;
+                }
+            }else{
+                return 0;
+            }
+        }
+    }
     public class Daga:Arsenal
         {
             public Daga(){

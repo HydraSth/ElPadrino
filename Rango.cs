@@ -38,6 +38,14 @@ namespace Rango
                             SumaPeligro+=(revolver.CantidadBalas*2);
                         }
                     break;
+                    case "Revolver oxidado":
+                        RevolverOxidado revolverOxidado = (RevolverOxidado)arma;
+                        if(!revolverOxidado.Condiciones){
+                            SumaPeligro+=1;
+                        }else{
+                            SumaPeligro+=(revolverOxidado.CantidadBalas);
+                        }
+                    break;
                     case "Daga":
                         double numeroRandom = new Random().Next(0, 8);
                         SumaPeligro+=(int)Math.Floor(numeroRandom);
@@ -97,6 +105,13 @@ namespace Rango
                                 return;
                             }
                         break;
+                        case "Revolver oxidado":
+                            RevolverOxidado revolverOxidado = (RevolverOxidado)arma;
+                            if(revolverOxidado.Condiciones){
+                                revolverOxidado.Atacar(mafioso);
+                                return;
+                            }
+                        break;
                         case "Daga":
                             Daga daga = (Daga)arma;
                             if(daga.Condiciones){
@@ -123,6 +138,9 @@ namespace Rango
                 arma.Recargar();
             }
             armas.Add(new Revolver());
+        }
+        public void GustosRusticos(){
+            armas.Add(new RevolverOxidado());
         }
     }
     public class Don:Humano{
